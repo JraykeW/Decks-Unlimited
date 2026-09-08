@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decks Unlimited | Central Louisiana</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #0f0f12; /* Dark industrial background */
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #16161a;
+            max-width: 520px;
+            width: 100%;
+            border-radius: 16px;
+            padding: 36px 24px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            border: 1px solid #232329;
+            position: relative;
+        }
+
+        /* Top Logo / Title Styling */
+        .logo-img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+        }
+
+        .business-title {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            font-style: italic;
+            color: #a855f7; /* Subtle Purple Accent */
+            margin-top: 4px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* Bio Box */
+        .bio-box {
+            background-color: #1f1f24;
+            border-left: 4px solid #7e22ce; /* Deep Purple Accent Bar */
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+            text-align: left;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: #cbd5e1;
+        }
+
+        /* Services Tags */
+        .services-header {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #94a3b8;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .service-tag {
+            background-color: #26262e;
+            color: #e2e8f0;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #33333e;
+        }
+
+        .highlight-tag {
+            background-color: #581c87; /* Subtle Purple Fill */
+            color: #ffffff;
+            border-color: #7e22ce;
+        }
+
+        /* Contact Details Box */
+        .contact-card {
+            background-color: #1a1a20;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            border: 1px solid #2a2a35;
+        }
+
+        .contact-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .contact-item {
+            margin: 6px 0;
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            color: #c084fc; /* Light purple link */
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .location-text {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-top: 8px;
+        }
+
+        /* Badges / Highlights Bar */
+        .badges-container {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            background-color: #121216;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 0.82rem;
+            color: #a1a1aa;
+            text-align: center;
+            border: 1px dashed #33333e;
+        }
+
+        .badge-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .badge-item i {
+            color: #c084fc;
+        }
+
+        /* Action Buttons */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background-color: #26262e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            border: 1px solid #3b3b47;
+        }
+
+        .btn:hover {
+            background-color: #6b21a8; /* Dark purple on hover */
+            border-color: #a855f7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.25);
+        }
+
+        .btn i {
+            font-size: 1.25rem;
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 0.78rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo Image (Will load logo.jpg if placed in the same folder) -->
+        <img src="logo.jpg" alt="Decks Unlimited Logo" class="logo-img" onerror="this.style.display='none'">
+        
+        <!-- Fallback Text Title if logo image isn't loaded -->
+        <h1 class="business-title">DECKS UNLIMITED</h1>
+        <div class="tagline">"We're not the best, there's just no one better."</div>
+
+        <!-- Short Bio -->
+        <div class="bio-box">
+            Serving central Louisiana since 2003. Decks Unlimited provides customers with beautiful, reliable, and high-quality work at a price that can't be beat. We use only the best materials and provide an unmatched level of customer service. I take pride in treating every customer with dignity, respect, and patience while making their vision come true.
+        </div>
+
+        <!-- Services -->
+        <div class="services-header">Services & Builds</div>
+        <div class="services-grid">
+            <span class="service-tag">Decks</span>
+            <span class="service-tag">Cedar Privacy Fences</span>
+            <span class="service-tag">Chain Link Fencing</span>
+            <span class="service-tag">Pergolas</span>
+            <span class="service-tag">Screen Rooms</span>
+            <span class="service-tag">Portable Buildings</span>
+            <span class="service-tag">Patio Covers</span>
+            <span class="service-tag highlight-tag">If you can dream it, I can build it!</span>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-card">
+            <div class="contact-name">Drake Wehrle</div>
+            <div class="contact-item">
+                <i class="fa-solid fa-phone" style="margin-right: 6px; color: #a855f7;"></i>
+                Text or Call: <a href="tel:3185920412">(318) 592-0412</a>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope" style="margin-right: 6px; color: #a855f7;"></i>
+                Email: <a href="mailto:drakewehrle@gmail.com">drakewehrle@gmail.com</a>
+            </div>
+            <div class="location-text">
+                <i class="fa-solid fa-location-dot" style="margin-right: 4px;"></i>
+                Servicing Central Louisiana & Surrounding Areas
+            </div>
+        </div>
+
+        <!-- Badges & Highlights -->
+        <div class="badges-container">
+            <div class="badge-item">
+                <i class="fa-solid fa-check-circle"></i> Free Quotes Available
+            </div>
+            <div class="badge-item">
+                <i class="fa-solid fa-credit-card"></i> Multiple Payment Options
+            </div>
+            <div class="badge-item">
+                <i class="fa-solid fa-video"></i> Feature your project in a YouTube or Facebook reel!
+            </div>
+        </div>
+
+        <!-- Action Links -->
+        <a href="https://photos.app.goo.gl/SMoYTPXtGozuQjqh9" class="btn" target="_blank">
+            <i class="fa-solid fa-images"></i> View Project Photo Gallery
+        </a>
+
+        <a href="https://www.youtube.com/@DecksUnlimited" class="btn" target="_blank">
+            <i class="fa-brands fa-youtube"></i> Watch Our Youtube Videos
+        </a>
+
+        <a href="https://www.facebook.com/drake.wehrle/" class="btn" target="_blank">
+            <i class="fa-brands fa-facebook"></i> Contact for Quotes on Facebook
+        </a>
+
+        <div class="footer">
+            &copy; 2026 Decks Unlimited. All rights reserved.
+        </div>
+    </div>
+
+</body>
+</html>
