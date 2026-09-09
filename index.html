@@ -15,7 +15,14 @@
         }
 
         body {
-            background-color: #0f0f12; /* Dark industrial background */
+            /* NEW: DARK PATTERN BACKGROUND */
+            background-color: #0f0f12; /* Fallback color */
+            background-image: url('background-pattern.jpg'); /* The name of your pattern image file */
+            background-repeat: repeat; /* The pattern repeats across the page */
+            background-position: center center;
+            background-attachment: fixed; /* Background stays put when you scroll */
+            background-size: auto; /* Uses the native size of the repeating pattern */
+            
             color: #e2e8f0;
             display: flex;
             justify-content: center;
